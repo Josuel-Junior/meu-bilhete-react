@@ -5,7 +5,11 @@ export default function ResultInformation(props) {
 
   return (
     <div >
-        <h2 >{props.number}</h2>
+        <h2>{props.number ? (
+          "Acumulou" ) : (
+            " Concurso não acumulou"
+          
+        )}</h2>
     </div>
   )
 }

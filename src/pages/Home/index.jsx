@@ -70,7 +70,7 @@ export default function Home() {
 
              {/* Criar componente para esses dados */}
           </div>
-            <ResultInformation number={"Teste de componente"}/>
+            <ResultInformation number={resultGame.acumulou}/>
         </div>
         <div className={styles.awardResult}>
           <h2>teste2</h2>
