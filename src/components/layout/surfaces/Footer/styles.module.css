@@ -1,0 +1,19 @@
+.footer{
+    padding: 1rem;
+    background-color: #eef0f1;
+}
+.footer address{
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    font-style: normal;
+}
+.footer address a{
+    text-decoration: none;
+    color: #000000;
+    margin-right: 2px;
+    transition: all .3s;
+}
+.footer address a:hover{
+    color: #0b21ca;
+}
