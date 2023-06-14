@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../../services/api";
+import api from "../../components/data/Services/api";
 import styles from "./styles.module.css";
 
 import Display from "../../components/layout/data-display/Display";
@@ -8,6 +8,7 @@ import ResultInformation from "../../components/layout/data-display/resultInform
 
 import ContestResult from "../../components/layout/data-display/ContestResult";
 
+
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -15,6 +16,8 @@ export default function Home() {
 
   const [contest, setContest] = useState("");
   const [searchConcurso, setSearchConcurso] = useState("");
+
+
 
   // const handChange = (event) => {
   //   event.preventDefault();
@@ -29,7 +32,6 @@ export default function Home() {
       const response = await api.get(contest);
 
       setResultGame(response.data);
-      // console.log(response.data.premiacao);
 
       setLoading(false);
     } catch (error) {
@@ -51,18 +53,11 @@ export default function Home() {
     );
   }
 
+
+
   return (
     <div className={styles.container}>
       <div>
-        {/* <form onSubmit={handChange}>
-          <input
-            type="text"
-            onChange={(e) => setContest(e.target.value)}
-            value={contest}
-          />
-          <p>{contest}</p>
-          <button type="submit">Buscar</button>
-        </form> */}
         <Search
           contest={contest}
           setContest={setContest}
@@ -87,11 +82,8 @@ export default function Home() {
           />
         </div>
         <div className={styles.awardResult}>
-          <h2>Premiação</h2> 
-       
-
+          <h2>Premiação</h2>
           <ResultInformation one={resultGame?.premiacao} />
-       
         </div>
       </div>
     </div>
