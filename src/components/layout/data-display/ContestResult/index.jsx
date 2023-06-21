@@ -1,8 +1,13 @@
+import styles from './styles.module.css'
+
 
 export default function ContestResult(props) {
-  const [resultOne, validateOne, validateTwo] = props.awardOne;
+  const [resultOne] = props.awardOne;
 
-  if (validateOne == 0 && validateTwo == 0) {
+  console.log(resultOne)
+
+
+  if (props.awardOne.length == 0) {
     return (
       <div>
         <p>Valores em apuração</p>
@@ -11,7 +16,7 @@ export default function ContestResult(props) {
   }
 
   return (
-    <div>
+    <div className={styles.result}>
       <h2>{props.number ? "Acumulou" : "Concurso não acumulou"}</h2>
       <p>{resultOne.quantidade_ganhadores > 0 ? "Saiu" : "Não saiu"}</p>
     </div>

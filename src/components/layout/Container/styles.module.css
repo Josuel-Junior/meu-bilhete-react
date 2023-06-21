@@ -1,20 +1,19 @@
-.container{
-    width: 1200px;
+.container {
+    max-width: 1300px;
     display: flex;
-    justify-content: space-between;
     margin: 0 auto;
-    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.minHeight{
+.minHeight {
     min-height: 90vh;
 }
 
-.start{
+.start {
     justify-content: flex-start;
 }
 
-.column{
+.column {
     flex-direction: column;
     justify-content: flex-start;
 }

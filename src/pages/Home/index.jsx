@@ -8,24 +8,16 @@ import ResultInformation from "../../components/layout/data-display/resultInform
 
 import ContestResult from "../../components/layout/data-display/ContestResult";
 
+import Preloading from "../../assets/search.gif";
+
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
-  const [resultGame, setResultGame] = useState();
+  const [resultGame, setResultGame] = useState("");
 
-  const [contest, setContest] = useState("");
+  const [contest, setContest] = useState('');
   const [searchConcurso, setSearchConcurso] = useState("");
-
-
-
-  // const handChange = (event) => {
-  //   event.preventDefault();
-
-  //   // if (!contest) return;
-
-  //   setSearchConcurso(contest);
-  // };
 
   const result = async (contest) => {
     try {
@@ -36,24 +28,26 @@ export default function Home() {
       setLoading(false);
     } catch (error) {
       console.log("concurso nao encontrado");
-      console.error(error);
+      console.error(error.response.data);
     }
   };
 
   useEffect(() => {
-    const apiURL = `resultado?loteria=megasena&token=upihg25AEZHSRmi&concurso=${contest}`;
-    result(apiURL);
+    const apiURL = 'mega-sena/latest';
+    contest != '' && contest > 0 ? result(`mega-sena/${contest}`) : result(apiURL);
+
   }, [searchConcurso]);
 
   if (loading) {
     return (
-      <div className="loading">
-        <h2>Carregando...</h2>
+      <div className={styles.loading}>
+        <div className={styles.preLoading}>
+          <h2>Buscando Resultado...</h2>
+          <img src={Preloading} alt="" />
+        </div>
       </div>
     );
   }
-
-
 
   return (
     <div className={styles.container}>
@@ -66,7 +60,7 @@ export default function Home() {
       </div>
       <div className={styles.resultMain}>
         <div className={styles.resultNumber}>
-          <h2>Mega-Sena / Concurso {resultGame?.numero_concurso}</h2>
+          <h2>Mega-Sena / Concurso {resultGame?.concurso}</h2>
           <div className={styles.result}>
             {resultGame?.dezenas.map((item, index) => {
               return (
@@ -77,13 +71,13 @@ export default function Home() {
             })}
           </div>
           <ContestResult
-            number={resultGame?.acumulou}
-            awardOne={resultGame?.premiacao}
+            number={resultGame.acumulou}
+            awardOne={resultGame.premiacoes}
           />
         </div>
         <div className={styles.awardResult}>
           <h2>Premiação</h2>
-          <ResultInformation one={resultGame?.premiacao} />
+          <ResultInformation one={resultGame.premiacoes} />
         </div>
       </div>
     </div>
