@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
-import api from "../../components/data/Services/api";
+import api from "../../data/Services/api";
 import styles from "./styles.module.css";
 
-import Display from "../../components/layout/data-display/Display";
-import Search from "../../components/layout/inputs/Search";
-import ResultInformation from "../../components/layout/data-display/resultInformation";
+import Display from "../../data/components/data-display/Display";
+import Search from "../../data/components/inputs/Search";
+import ResultInformation from "../../data/components/data-display/ResultInformation";
 
-import ContestResult from "../../components/layout/data-display/ContestResult";
+import ContestResult from "../../data/components/data-display/ContestResult";
 
 import Preloading from "../../assets/search.gif";
+import ValidadeContest from "../../data/Services/validateContest";
+
+
 
 
 export default function Home() {
@@ -33,9 +36,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const apiURL = 'mega-sena/latest';
-    contest != '' && contest > 0 ? result(`mega-sena/${contest}`) : result(apiURL);
-
+    result(ValidadeContest(contest, resultGame))
   }, [searchConcurso]);
 
   if (loading) {

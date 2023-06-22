@@ -4,9 +4,6 @@ import styles from './styles.module.css'
 export default function ContestResult(props) {
   const [resultOne] = props.awardOne;
 
-  console.log(resultOne)
-
-
   if (props.awardOne.length == 0) {
     return (
       <div>

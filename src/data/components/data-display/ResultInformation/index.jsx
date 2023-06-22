@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import ValidateInformation from "../../../data/ValidateData/ValidateInformation";
+import validateInfoResult from "../../../Services/validateInfoResult";
 
 
 export default function ResultInformation(props) {
@@ -19,7 +19,7 @@ export default function ResultInformation(props) {
         return (
           <div key={index} className={styles.result}>
             <h3>{`${item.acertos}`}</h3>
-            <ValidateInformation validateWinners={item} />
+            <span>{validateInfoResult(item)}</span>
           </div>
         );
       })}
