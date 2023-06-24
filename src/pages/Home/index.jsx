@@ -8,9 +8,8 @@ import ResultInformation from "../../data/components/data-display/ResultInformat
 
 import ContestResult from "../../data/components/data-display/ContestResult";
 
-import Preloading from "../../assets/search.gif";
 import ValidadeContest from "../../data/Services/validateContest";
-
+import Preloader from "../../data/components/data-display/Preloader";
 
 
 
@@ -23,6 +22,7 @@ export default function Home() {
   const [searchConcurso, setSearchConcurso] = useState("");
 
   const result = async (contest) => {
+    setLoading(true);
     try {
       const response = await api.get(contest);
 
@@ -33,20 +33,17 @@ export default function Home() {
       console.log("concurso nao encontrado");
       console.error(error.response.data);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
     result(ValidadeContest(contest, resultGame))
   }, [searchConcurso]);
 
+
   if (loading) {
     return (
-      <div className={styles.loading}>
-        <div className={styles.preLoading}>
-          <h2>Buscando Resultado...</h2>
-          <img src={Preloading} alt="" />
-        </div>
-      </div>
+      <Preloader />
     );
   }
 

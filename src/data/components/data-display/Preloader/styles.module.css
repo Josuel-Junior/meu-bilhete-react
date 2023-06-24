@@ -1,0 +1,14 @@
+.loading {
+    display: block;
+    position: absolute;
+
+    top: 40%;
+}
+
+.preLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}

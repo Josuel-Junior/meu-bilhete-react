@@ -17,24 +17,25 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    background-color: brown;
+
 }
 
 
 .result {
     display: flex;
-    padding: 10px;
+    margin: 20px 0;
 }
 
 .awardResult {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     width: 50%;
     height: 100%;
+
 }
 
 .awardResult h2 {
@@ -42,24 +43,3 @@
     margin: 20px 0;
     font-size: 2rem;
 }
-
-
-.loading {
-    display: block;
-    position: absolute;
-
-    top: 40%;
-}
-
-.preLoading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-}
-
-/* .loading h2 {
-    margin-bottom: 10px;
-
-} */
