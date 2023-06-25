@@ -1,19 +1,30 @@
-.footer{
+.footer {
     padding: 1rem;
     background-color: #eef0f1;
 }
-.footer address{
+
+.footer address {
     display: flex;
     justify-content: center;
     font-size: 1rem;
     font-style: normal;
 }
-.footer address a{
+
+.footer address a {
     text-decoration: none;
     color: #000000;
     margin-right: 2px;
     transition: all .3s;
 }
-.footer address a:hover{
+
+.footer address a:hover {
     color: #0b21ca;
+}
+
+@media(max-width: 500px) {
+    .footer address {
+        flex-direction: column;
+        align-items: center;
+        font-size: .8rem;
+    }
 }

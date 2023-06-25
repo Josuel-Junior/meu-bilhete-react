@@ -13,3 +13,19 @@
     align-items: center;
     font-size: 1.8rem;
 }
+
+@media(max-width: 450px) {
+    .display {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+@media(max-width: 350px) {
+    .display {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
