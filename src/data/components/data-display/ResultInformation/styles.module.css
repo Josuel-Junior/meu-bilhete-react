@@ -2,10 +2,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px;
+    padding: 10px;
+    background-color: #eef0f1;
+    /* background-color: aqua; */
 }
 
 .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: 1.4rem;
     padding: 15px;
+    width: 100%;
+    /* background-color: blue; */
+}
+
+.result h3 {
+    margin-bottom: 10px;
 }

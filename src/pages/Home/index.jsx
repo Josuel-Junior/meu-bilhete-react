@@ -18,7 +18,7 @@ export default function Home() {
 
   const [resultGame, setResultGame] = useState("");
 
-  const [contest, setContest] = useState('');
+  const [contest, setContest] = useState("");
   const [searchConcurso, setSearchConcurso] = useState("");
 
   const result = async (contest) => {
@@ -37,7 +37,8 @@ export default function Home() {
   };
 
   useEffect(() => {
-    result(ValidadeContest(contest, resultGame))
+    console.log('teste')
+    result(ValidadeContest(contest, resultGame, 'mega-sena'))
   }, [searchConcurso]);
 
 

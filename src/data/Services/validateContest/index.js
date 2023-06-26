@@ -1,11 +1,11 @@
-export default function ValidateContest(contest, currentContest) {
+export default function ValidateContest(contest, currentContest, game) {
     let validate = ''
 
     if (contest != '' && contest > 0 && contest < currentContest.concurso) {
-        validate = `mega-sena/${contest}`
+        validate = `${game}/${contest}`
 
     } else {
-        validate = 'mega-sena/latest'
+        validate = `${game}/latest`
     }
 
     return validate
