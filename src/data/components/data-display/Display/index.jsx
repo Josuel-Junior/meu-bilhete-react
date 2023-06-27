@@ -1,10 +1,11 @@
 import styles from './styles.module.css'
 
+import { DisplayResult } from './styles'
 
-export default function Display(props) {
+export default function Display({ number, color }) {
   return (
     <div className={styles.padding}>
-      <h2 className={styles.display}>{props.number}</h2>
+      <DisplayResult className={styles.display} color={color}>{number}</DisplayResult>
     </div>
   )
 }

@@ -18,7 +18,7 @@ export default function Quina() {
     const [resultGame, setResultGame] = useState("");
 
     const [contest, setContest] = useState("");
-    const [searchConcurso, setSearchConcurso] = useState("");
+
 
     const result = async (contest) => {
         setLoading(true);
@@ -38,7 +38,11 @@ export default function Quina() {
 
     useEffect(() => {
         result(ValidadeContest(contest, resultGame, 'quina'))
-    }, [searchConcurso]);
+    }, []);
+
+    function fnSearch() {
+        result(ValidadeContest(contest, resultGame, 'quina'))
+    }
 
 
     if (loading) {
@@ -56,7 +60,7 @@ export default function Quina() {
                 <Search
                     contest={contest}
                     setContest={setContest}
-                    setSearchConcurso={setSearchConcurso}
+                    fnSearch={fnSearch}
                 />
             </div>
             <div className={styles.resultMain}>
@@ -66,7 +70,7 @@ export default function Quina() {
                         {resultGame.dezenas.map((item, index) => {
                             return (
                                 <div key={index}>
-                                    <Display number={item} />
+                                    {/* <Display number={item} color={'#260085'} /> */}
                                 </div>
                             );
                         })}

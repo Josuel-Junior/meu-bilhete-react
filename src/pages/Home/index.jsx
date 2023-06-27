@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+
+import { useReactToPrint } from "react-to-print";
+import { useRef } from "react";
+
+
 import api from "../../data/Services/api";
 import styles from "./styles.module.css";
 
@@ -13,13 +18,19 @@ import Preloader from "../../data/components/data-display/Preloader";
 
 
 
+
+
+
 export default function Home() {
+
+
+  const conponentPDF = useRef();
   const [loading, setLoading] = useState(true);
 
   const [resultGame, setResultGame] = useState("");
 
   const [contest, setContest] = useState("");
-  const [searchConcurso, setSearchConcurso] = useState("");
+
 
   const result = async (contest) => {
     setLoading(true);
@@ -39,22 +50,43 @@ export default function Home() {
   useEffect(() => {
     console.log('teste')
     result(ValidadeContest(contest, resultGame, 'mega-sena'))
-  }, [searchConcurso]);
+  }, []);
+
+  function fnSearch() {
+    result(ValidadeContest(contest, resultGame, 'mega-sena'))
+  }
+
+  const generationPDF = useReactToPrint({
+    content: () => conponentPDF.current,
+    documentTitle: "Userdata",
+    onAfterPrint: () => alert("Data saved in PDF")
+  });
 
 
+
+  // const cor = '#209869'
   if (loading) {
     return (
       <Preloader />
     );
   }
 
+
+
+
+
   return (
     <div className={styles.container}>
+
+      <div ref={conponentPDF} className={styles.teste}>
+        <p>teste</p>
+      </div>
+      <button onClick={generationPDF}>PDF</button>
       <div>
         <Search
           contest={contest}
           setContest={setContest}
-          setSearchConcurso={setSearchConcurso}
+          fnSearch={fnSearch}
         />
       </div>
       <div className={styles.resultMain}>
@@ -64,7 +96,7 @@ export default function Home() {
             {resultGame?.dezenas.map((item, index) => {
               return (
                 <div key={index}>
-                  <Display number={item} />
+                  <Display number={item} color={'#209869'} />
                 </div>
               );
             })}

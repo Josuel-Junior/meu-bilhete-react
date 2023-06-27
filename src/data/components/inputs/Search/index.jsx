@@ -6,11 +6,13 @@ const maskOnlyNumbers = (value) => {
 };
 
 export default function Search(props) {
-  const { contest, setContest, setSearchConcurso } = props;
+  const { contest, setContest, fnSearch } = props;
 
   const handChange = (event) => {
+    console.log('rodou no search')
     event.preventDefault();
-    setSearchConcurso(contest);
+
+    fnSearch()
   };
 
 
