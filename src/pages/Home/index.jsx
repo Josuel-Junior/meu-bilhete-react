@@ -19,6 +19,8 @@ import Preloader from "../../data/components/data-display/Preloader";
 
 import Buttons from "../../data/components/Buttons";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -59,7 +61,8 @@ export default function Home() {
   const generationPDF = useReactToPrint({
     content: () => conponentPDF.current,
     documentTitle: "Userdata",
-    onAfterPrint: () => alert("Data saved in PDF")
+    onAfterPrint: () => toast.success("PDF Salvo com sucesso")
+
   });
 
   if (loading) {
@@ -73,7 +76,7 @@ export default function Home() {
     <div className={styles.container}>
 
       <Buttons generation={generationPDF} />
-
+      <ToastContainer autoClose={1000} />
       <div>
         <Search
           contest={contest}

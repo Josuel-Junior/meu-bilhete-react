@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../data/Services/api";
-import styles from './styles.module.css'
+import styles from '../Home/styles.module.css'
 
 import Display from "../../data/components/data-display/Display";
 import Search from "../../data/components/inputs/Search";
@@ -10,6 +10,7 @@ import ContestResult from "../../data/components/data-display/ContestResult";
 
 import ValidadeContest from "../../data/Services/validateContest";
 import Preloader from "../../data/components/data-display/Preloader";
+
 
 
 export default function Quina() {
@@ -82,7 +83,7 @@ export default function Quina() {
                 </div>
                 <div className={styles.awardResult}>
                     <h2>Premiação</h2>
-                    <ResultInformation one={resultGame.premiacoes} />
+                    <ResultInformation infoGame={resultGame.premiacoes} />
                 </div>
             </div>
         </div>
