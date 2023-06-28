@@ -2,7 +2,6 @@ import styles from './styles.module.css'
 
 
 export default function ContestResult(props) {
-  const [resultOne] = props.awardOne;
 
   if (props.awardOne.length == 0) {
     return (
@@ -15,7 +14,7 @@ export default function ContestResult(props) {
   return (
     <div className={styles.result}>
       <h2>{props.number ? "Acumulou" : "Concurso não acumulou"}</h2>
-      <p>{resultOne.quantidade_ganhadores > 0 ? "Saiu" : "Não saiu"}</p>
+      <p>{props.awardOne.quantidade_ganhadores > 0 ? "Saiu" : "Não saiu"}</p>
     </div>
   );
 }

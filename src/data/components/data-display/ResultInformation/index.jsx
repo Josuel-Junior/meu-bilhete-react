@@ -4,7 +4,7 @@ import validateInfoResult from "../../../Services/validateInfoResult";
 
 export default function ResultInformation(props) {
 
-  if (props.one.length == 0) {
+  if (props.infoGame.length == 0) {
     return (
       <div>
         <p>Resultado em breve</p>
@@ -15,7 +15,7 @@ export default function ResultInformation(props) {
 
   return (
     <div className={styles.container}>
-      {props.one.map((item, index) => {
+      {props.infoGame.map((item, index) => {
         return (
           <div key={index} className={styles.result}>
             <h3>{`${item.acertos}`}</h3>

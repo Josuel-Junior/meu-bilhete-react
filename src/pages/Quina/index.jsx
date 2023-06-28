@@ -70,7 +70,7 @@ export default function Quina() {
                         {resultGame.dezenas.map((item, index) => {
                             return (
                                 <div key={index}>
-                                    {/* <Display number={item} color={'#260085'} /> */}
+                                    <Display number={item} color={'#260085'} />
                                 </div>
                             );
                         })}

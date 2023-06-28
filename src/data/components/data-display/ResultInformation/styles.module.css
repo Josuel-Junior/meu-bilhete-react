@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
     background-color: #eef0f1;
+    padding: 10px;
+    margin: 10px 0;
     /* background-color: aqua; */
 }
 

@@ -4,6 +4,7 @@ import { useReactToPrint } from "react-to-print";
 import { useRef } from "react";
 
 
+
 import api from "../../data/Services/api";
 import styles from "./styles.module.css";
 
@@ -16,7 +17,7 @@ import ContestResult from "../../data/components/data-display/ContestResult";
 import ValidadeContest from "../../data/Services/validateContest";
 import Preloader from "../../data/components/data-display/Preloader";
 
-
+import Buttons from "../../data/components/Buttons";
 
 
 
@@ -48,7 +49,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    console.log('teste')
     result(ValidadeContest(contest, resultGame, 'mega-sena'))
   }, []);
 
@@ -62,9 +62,6 @@ export default function Home() {
     onAfterPrint: () => alert("Data saved in PDF")
   });
 
-
-
-  // const cor = '#209869'
   if (loading) {
     return (
       <Preloader />
@@ -72,16 +69,11 @@ export default function Home() {
   }
 
 
-
-
-
   return (
     <div className={styles.container}>
 
-      <div ref={conponentPDF} className={styles.teste}>
-        <p>teste</p>
-      </div>
-      <button onClick={generationPDF}>PDF</button>
+      <Buttons generation={generationPDF} />
+
       <div>
         <Search
           contest={contest}
@@ -89,7 +81,7 @@ export default function Home() {
           fnSearch={fnSearch}
         />
       </div>
-      <div className={styles.resultMain}>
+      <div className={styles.resultMain} ref={conponentPDF}>
         <div className={styles.resultNumber}>
           <h2>Mega-Sena / Concurso {resultGame?.concurso}</h2>
           <div className={styles.result}>
@@ -108,7 +100,7 @@ export default function Home() {
         </div>
         <div className={styles.awardResult}>
           <h2>Premiação</h2>
-          <ResultInformation one={resultGame.premiacoes} />
+          <ResultInformation infoGame={resultGame.premiacoes} />
         </div>
       </div>
     </div>
