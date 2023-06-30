@@ -19,7 +19,6 @@
 }
 
 .resultNumber {
-
     margin-top: 15px;
     height: 100%;
     display: flex;
@@ -29,11 +28,25 @@
     background-color: cadetblue;
 }
 
+.resultNumber h2 {
+    margin: 10px 0;
+}
+
 
 .result {
-    display: flex;
-    margin: 20px 0;
+    display: grid;
+    grid-gap: 5px;
+    margin: 15px auto;
     background-color: chartreuse;
+}
+
+.sixColumns {
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+
+.fiveColumns {
+    grid-template-columns: auto auto auto auto auto;
 }
 
 .awardResult {
@@ -43,14 +56,18 @@
     flex-direction: column;
     background-color: aqua;
     height: 100%;
-
-
 }
 
 .awardResult h2 {
     color: #0066b3;
     font-size: 2rem;
+    margin: 5px 0;
 }
+
+/* .awardResult h3 {
+    color: #0066b3;
+    background-color: aqua;
+} */
 
 @media(max-width: 1400px) {
     .resultMain {

@@ -1,4 +1,10 @@
 import { useEffect, useState } from "react";
+
+import { useReactToPrint } from "react-to-print";
+import { useRef } from "react";
+
+
+
 import api from "../../data/Services/api";
 import styles from '../Home/styles.module.css'
 
@@ -13,23 +19,22 @@ import Preloader from "../../data/components/data-display/Preloader";
 
 import Buttons from "../../data/components/Buttons";
 
-
-import { useReactToPrint } from "react-to-print";
-import { useRef } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 import classnames from 'classnames'
 
-export default function Quina() {
+
+
+export default function Home() {
+
+
+    const conponentPDF = useRef();
     const [loading, setLoading] = useState(true);
 
     const [resultGame, setResultGame] = useState("");
 
     const [contest, setContest] = useState("");
-
-    const conponentPDF = useRef();
 
 
     const result = async (contest) => {
@@ -45,15 +50,14 @@ export default function Quina() {
             console.error(error.response.data);
         }
         setLoading(false);
-        console.log(resultGame)
     };
 
     useEffect(() => {
-        result(ValidadeContest(contest, resultGame, 'quina'))
+        result(ValidadeContest(contest, resultGame, 'lotofacil'))
     }, []);
 
     function fnSearch() {
-        result(ValidadeContest(contest, resultGame, 'quina'))
+        result(ValidadeContest(contest, resultGame, 'lotofacil'))
     }
 
     const generationPDF = useReactToPrint({
@@ -63,15 +67,11 @@ export default function Quina() {
 
     });
 
-
-
     if (loading) {
         return (
             <Preloader />
         );
     }
-
-
 
 
     return (
@@ -88,12 +88,12 @@ export default function Quina() {
             </div>
             <div className={styles.resultMain} ref={conponentPDF}>
                 <div className={styles.resultNumber}>
-                    <h2>Quina / Concurso {resultGame?.concurso}</h2>
-                    <div className={classnames(styles.result, styles.sixColumns, classnames)}>
+                    <h2>Lotofacil / Concurso {resultGame?.concurso}</h2>
+                    <div className={classnames(styles.result, styles.fiveColumns, classnames)}>
                         {resultGame?.dezenas.map((item, index) => {
                             return (
                                 <div key={index}>
-                                    <Display number={item} color={'#260085'} />
+                                    <Display number={item} color={'#a12da9'} />
                                 </div>
                             );
                         })}
@@ -109,5 +109,5 @@ export default function Quina() {
                 </div>
             </div>
         </div>
-    )
+    );
 }

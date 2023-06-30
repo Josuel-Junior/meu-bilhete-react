@@ -20,6 +20,12 @@ export default function Navbar() {
           <li>
             <Link to="/quina">Quina</Link>
           </li>
+          <li>
+            <Link to="/duplasena">Duplasena</Link>
+          </li>
+          <li>
+            <Link to="/lotofacil">Lotofacil</Link>
+          </li>
         </ul>
       </Container>
     </nav>

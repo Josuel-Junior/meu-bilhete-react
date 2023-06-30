@@ -22,6 +22,8 @@ import Buttons from "../../data/components/Buttons";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import classnames from 'classnames'
+
 
 
 export default function Home() {
@@ -87,7 +89,7 @@ export default function Home() {
       <div className={styles.resultMain} ref={conponentPDF}>
         <div className={styles.resultNumber}>
           <h2>Mega-Sena / Concurso {resultGame?.concurso}</h2>
-          <div className={styles.result}>
+          <div className={classnames(styles.result, styles.sixColumns, classnames)}>
             {resultGame?.dezenas.map((item, index) => {
               return (
                 <div key={index}>
