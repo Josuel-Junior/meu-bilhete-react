@@ -15,7 +15,7 @@ export default function Navbar() {
         </Link>
         <ul className={styles.list}>
           <li>
-            <Link to="/">Início</Link>
+            <Link to="/">MegaSena</Link>
           </li>
           <li>
             <Link to="/quina">Quina</Link>
@@ -24,7 +24,10 @@ export default function Navbar() {
             <Link to="/duplasena">Duplasena</Link>
           </li>
           <li>
-            <Link to="/lotofacil">Lotofacil</Link>
+            <Link to="/lotofacil">LotoFácil</Link>
+          </li>
+          <li>
+            <Link to="/diadesorte">DiaDeSorte</Link>
           </li>
         </ul>
       </Container>

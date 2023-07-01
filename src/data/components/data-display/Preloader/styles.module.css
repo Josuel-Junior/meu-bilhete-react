@@ -1,8 +1,6 @@
 .loading {
     display: block;
-    position: absolute;
-
-    top: 40%;
+    margin: auto;
 }
 
 .preLoading {

@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
-    background-color: aqua;
+
 }
 
 .resultMain {
@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blueviolet;
+
 }
 
 .resultNumber {
@@ -25,7 +25,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: cadetblue;
+
 }
 
 .resultNumber h2 {
@@ -36,12 +36,15 @@
 .result {
     display: grid;
     grid-gap: 5px;
-    margin: 15px auto;
-    background-color: chartreuse;
+    margin: auto;
 }
 
 .sixColumns {
     grid-template-columns: auto auto auto auto auto auto;
+}
+
+.sevenColumns {
+    grid-template-columns: auto auto auto auto auto auto auto;
 }
 
 
@@ -54,7 +57,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: aqua;
     height: 100%;
 }
 
@@ -84,7 +86,18 @@
     }
 }
 
+@media(max-width: 700px) {
+
+    .sevenColumns {
+        grid-template-columns: auto auto auto auto auto;
+    }
+}
+
 @media(max-width: 500px) {
+
+    /* .sevenColumns {
+        grid-template-columns: auto auto auto;
+    } */
 
     .awardResult {}
 

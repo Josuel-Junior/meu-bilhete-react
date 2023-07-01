@@ -90,7 +90,7 @@ export default function Home() {
         <div className={styles.resultNumber}>
           <h2>Mega-Sena / Concurso {resultGame?.concurso}</h2>
           <div className={classnames(styles.result, styles.sixColumns, classnames)}>
-            {resultGame?.dezenas.map((item, index) => {
+            {resultGame.dezenas.map((item, index) => {
               return (
                 <div key={index}>
                   <Display number={item} color={'#209869'} />

@@ -1,10 +1,4 @@
 import { useEffect, useState } from "react";
-
-import { useReactToPrint } from "react-to-print";
-import { useRef } from "react";
-
-
-
 import api from "../../data/Services/api";
 import styles from '../Home/styles.module.css'
 
@@ -19,22 +13,23 @@ import Preloader from "../../data/components/data-display/Preloader";
 
 import Buttons from "../../data/components/Buttons";
 
+
+import { useReactToPrint } from "react-to-print";
+import { useRef } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 import classnames from 'classnames'
 
-
-
-export default function Home() {
-
-
-    const conponentPDF = useRef();
+export default function Quina() {
     const [loading, setLoading] = useState(true);
 
     const [resultGame, setResultGame] = useState("");
 
     const [contest, setContest] = useState("");
+
+    const conponentPDF = useRef();
 
 
     const result = async (contest) => {
@@ -50,14 +45,15 @@ export default function Home() {
             console.error(error.response.data);
         }
         setLoading(false);
+        console.log(resultGame)
     };
 
     useEffect(() => {
-        result(ValidadeContest(contest, resultGame, 'dupla-sena'))
+        result(ValidadeContest(contest, resultGame, 'dia-de-sorte'))
     }, []);
 
     function fnSearch() {
-        result(ValidadeContest(contest, resultGame, 'dupla-sena'))
+        result(ValidadeContest(contest, resultGame, 'dia-de-sorte'))
     }
 
     const generationPDF = useReactToPrint({
@@ -67,11 +63,15 @@ export default function Home() {
 
     });
 
+
+
     if (loading) {
         return (
             <Preloader />
         );
     }
+
+
 
 
     return (
@@ -88,21 +88,12 @@ export default function Home() {
             </div>
             <div className={styles.resultMain} ref={conponentPDF}>
                 <div className={styles.resultNumber}>
-                    <h2>Dupla-Sena / Concurso {resultGame?.concurso}</h2>
-                    <div className={classnames(styles.result, styles.sixColumns, classnames)}>
-                        {resultGame?.dezenas.slice(0, 6).map((item, index) => {
+                    <h2>Dia de Sorte / Concurso {resultGame?.concurso}</h2>
+                    <div className={classnames(styles.result, styles.sevenColumns, classnames)}>
+                        {resultGame?.dezenas.map((item, index) => {
                             return (
                                 <div key={index}>
-                                    <Display number={item} color={'#c5221f'} />
-                                </div>
-                            );
-                        })}
-                    </div>
-                    <div className={classnames(styles.result, styles.sixColumns, classnames)}>
-                        {resultGame?.dezenas.slice(6, 12).map((item, index) => {
-                            return (
-                                <div key={index}>
-                                    <Display number={item} color={'#209869'} />
+                                    <Display number={item} color={'#d3b315'} />
                                 </div>
                             );
                         })}
@@ -114,12 +105,10 @@ export default function Home() {
                 </div>
                 <div className={styles.awardResult}>
                     <h2>Premiação</h2>
-                    <h3 style={{ color: '#c5221f' }}>Concurso 1</h3>
-                    <ResultInformation infoGame={resultGame.premiacoes.slice(0, 3)} />
-                    <h3 style={{ color: '#209869' }}>Concurso 2</h3>
-                    <ResultInformation infoGame={resultGame.premiacoes.slice(4, 7)} />
+                    <h3>Mês da Sorte: {resultGame.mesSorte}</h3>
+                    <ResultInformation infoGame={resultGame.premiacoes} />
                 </div>
             </div>
         </div>
-    );
+    )
 }

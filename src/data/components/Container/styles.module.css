@@ -2,18 +2,9 @@
     max-width: 1300px;
     display: flex;
     margin: 0 auto;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .minHeight {
     min-height: 90vh;
-}
-
-.start {
-    justify-content: flex-start;
-}
-
-.column {
-    flex-direction: column;
-    justify-content: flex-start;
 }
