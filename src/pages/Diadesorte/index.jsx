@@ -99,13 +99,13 @@ export default function Quina() {
                         })}
                     </div>
                     <ContestResult
-                        number={resultGame.acumulou}
-                        awardOne={resultGame.premiacoes}
+                        resultContest={resultGame.acumulou}
+                        result={resultGame.premiacoes}
                     />
                 </div>
                 <div className={styles.awardResult}>
-                    <h2>Premiação</h2>
-                    <h3>Mês da Sorte: {resultGame.mesSorte}</h3>
+                    <h3>Premiação</h3>
+                    <p>Mês da Sorte: <span className={styles.month}>{resultGame.mesSorte}</span> </p>
                     <ResultInformation infoGame={resultGame.premiacoes} />
                 </div>
             </div>

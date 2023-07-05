@@ -108,12 +108,12 @@ export default function Home() {
                         })}
                     </div>
                     <ContestResult
-                        number={resultGame.acumulou}
-                        awardOne={resultGame.premiacoes}
+                        resultContest={resultGame.acumulou}
+                        result={resultGame.premiacoes}
                     />
                 </div>
                 <div className={styles.awardResult}>
-                    <h2>Premiação</h2>
+                    <h3>Premiação</h3>
                     <h3 style={{ color: '#c5221f' }}>Concurso 1</h3>
                     <ResultInformation infoGame={resultGame.premiacoes.slice(0, 3)} />
                     <h3 style={{ color: '#209869' }}>Concurso 2</h3>

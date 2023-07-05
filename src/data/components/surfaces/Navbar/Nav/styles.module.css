@@ -1,6 +1,6 @@
 .navbar {
     background-color: #2191c9;
-    padding: .7rem;
+    padding: .8rem;
     position: sticky;
     top: 0;
     width: 100%;
@@ -14,7 +14,7 @@
     width: 90%;
 
     display: flex;
-    align-items: center;
+    margin: auto;
     justify-content: space-between;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .logo img {
-    width: 30px;
+    width: 40px;
 }
 
 .list {

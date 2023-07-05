@@ -5,14 +5,12 @@ const maskOnlyNumbers = (value) => {
   return value.replace(/\D/g, "");
 };
 
-export default function Search(props) {
-
-  const { contest, setContest, fnSearch } = props;
+export default function Search({ contest, setContest, fnSearch }) {
 
   const handChange = (event) => {
-    console.log('rodou no search')
     event.preventDefault();
     fnSearch()
+    setContest('')
   };
 
 

@@ -1,11 +1,12 @@
 import styles from './styles.module.css'
 
 
-export default function ContestResult(props) {
+export default function ContestResult({ resultContest, result }) {
 
-  const [resultOne] = props.awardOne;
 
-  if (props.awardOne.length == 0) {
+  console.log(result.length)
+
+  if (result.length == 0) {
     return (
       <div>
         <p>Valores em apuração</p>
@@ -15,8 +16,8 @@ export default function ContestResult(props) {
 
   return (
     <div className={styles.result}>
-      <h2>{props.number ? "Acumulou" : "Concurso não acumulou"}</h2>
-      <p>{resultOne.vencedores > 0 ? "Saiu" : "Não saiu"}</p>
+      <h3>{resultContest ? "Acumulou" : "Concurso não acumulou"}</h3>
+      <p>{result[0].vencedores > 0 ? "Saiu" : "Não saiu"}</p>
     </div>
   );
 }

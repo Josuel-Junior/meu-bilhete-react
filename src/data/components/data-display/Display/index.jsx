@@ -1,10 +1,10 @@
 import styles from './styles.module.css'
 
-export default function Display(props) {
+export default function Display({ number, color }) {
 
   return (
     <div className={styles.padding}>
-      <h2 className={styles.display} style={{ background: props.color }}>{props.number}</h2>
+      <span className={styles.display} style={{ background: color }}>{number}</span>
     </div>
   )
 }
