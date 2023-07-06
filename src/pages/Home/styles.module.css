@@ -70,40 +70,9 @@
     color: #a88c04;
 }
 
-/* .awardResult h3 {
-    color: #0066b3;
-    background-color: aqua;
-} */
-
-@media(max-width: 1400px) {
-    .resultMain {
-        /* flex-direction: column;
-        align-items: center; */
-    }
-
-    .awardResult {
-        /* width: 90%; */
-    }
-
-    .resultNumber {
-        /* width: 90%; */
-    }
-}
-
 @media(max-width: 700px) {
 
     .sevenColumns {
         grid-template-columns: auto auto auto auto auto;
     }
-}
-
-@media(max-width: 500px) {
-
-    /* .sevenColumns {
-        grid-template-columns: auto auto auto;
-    } */
-
-    .awardResult {}
-
-    .resultNumber {}
 }

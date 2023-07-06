@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { useReactToPrint } from "react-to-print";
-import { useRef } from "react";
-
-
 
 import api from "../../data/Services/api";
 import styles from "./styles.module.css";
@@ -62,7 +59,7 @@ export default function Home() {
 
   const generationPDF = useReactToPrint({
     content: () => conponentPDF.current,
-    documentTitle: "Userdata",
+    documentTitle: "Resultado",
     onAfterPrint: () => toast.success("PDF Salvo com sucesso")
 
   });
@@ -75,8 +72,7 @@ export default function Home() {
 
 
   return (
-    <div className={styles.container}>
-
+    <section className={styles.container}>
       <Buttons generation={generationPDF} />
       <ToastContainer autoClose={1000} />
       <div>
@@ -108,6 +104,6 @@ export default function Home() {
           <ResultInformation infoGame={resultGame.premiacoes} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

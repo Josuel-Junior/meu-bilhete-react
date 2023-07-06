@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import api from "../../data/Services/api";
 import styles from '../Home/styles.module.css'
 
@@ -15,7 +15,6 @@ import Buttons from "../../data/components/Buttons";
 
 
 import { useReactToPrint } from "react-to-print";
-import { useRef } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -58,7 +57,7 @@ export default function Quina() {
 
     const generationPDF = useReactToPrint({
         content: () => conponentPDF.current,
-        documentTitle: "Userdata",
+        documentTitle: "Resultado",
         onAfterPrint: () => toast.success("PDF Salvo com sucesso")
 
     });
@@ -75,7 +74,7 @@ export default function Quina() {
 
 
     return (
-        <div className={styles.container}>
+        <section className={styles.container}>
 
             <Buttons generation={generationPDF} />
             <ToastContainer autoClose={1000} />
@@ -108,6 +107,6 @@ export default function Quina() {
                     <ResultInformation infoGame={resultGame.premiacoes} />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

@@ -23,7 +23,7 @@ export default function Navbar() {
     <header>
       <nav className={styles.navbar}>
         <Container>
-          <Link className={styles.logo}>
+          <Link to="/" className={styles.logo}>
             <img src={logo} alt="Logo" />
           </Link>
           <div className={styles.toggle}>

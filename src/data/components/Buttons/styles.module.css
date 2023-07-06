@@ -1,8 +1,8 @@
 .buttonPdf {
     position: fixed;
-    right: 0;
+    left: 0;
     bottom: 0;
-    margin-right: 5px;
+    margin-left: 2px;
     margin-bottom: 5px;
     cursor: pointer;
 
@@ -16,7 +16,7 @@
 
 @media(max-width: 1400px) {
     .buttonPdf img {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
 }
