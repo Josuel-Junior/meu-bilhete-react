@@ -43,7 +43,6 @@ export default function Home() {
 
       setLoading(false);
     } catch (error) {
-      console.log("concurso nao encontrado");
       console.error(error.response.data);
     }
     setLoading(false);

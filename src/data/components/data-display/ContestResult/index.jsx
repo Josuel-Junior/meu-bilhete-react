@@ -3,9 +3,6 @@ import styles from './styles.module.css'
 
 export default function ContestResult({ resultContest, result }) {
 
-
-  console.log(result.length)
-
   if (result.length == 0) {
     return (
       <div>

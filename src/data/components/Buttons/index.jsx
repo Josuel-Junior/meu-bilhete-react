@@ -6,7 +6,7 @@ export default function Button({ generation }) {
 
     return (
         <div className={styles.buttonPdf}>
-            <span  >
+            <span>
                 <img src={iconPdf} alt="Ícone para gerar PDF " onClick={generation} />
             </span>
         </div>

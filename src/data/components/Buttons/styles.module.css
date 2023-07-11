@@ -1,8 +1,8 @@
 .buttonPdf {
     position: fixed;
-    left: 0;
+    right: 0;
     bottom: 0;
-    margin-left: 2px;
+    margin-right: 2px;
     margin-bottom: 5px;
     cursor: pointer;
 

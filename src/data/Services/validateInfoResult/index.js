@@ -5,7 +5,6 @@ import numeral from "numeral"
 export default function validateResu(info) {
     let validate = ''
 
-    console.log(numeral(info.vencedores).format('0,0.0000'))
     if (info.vencedores > 1) {
         validate = `${numeral(info.vencedores).format('0,0')} Ganhadores R$ ${info.premio}`
     }
