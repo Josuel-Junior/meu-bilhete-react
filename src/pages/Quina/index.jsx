@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import api from "../../data/Services/api";
-import styles from '../Home/styles.module.css'
+import styles from './styles.module.css'
 
 import Display from "../../data/components/data-display/Display";
 import Search from "../../data/components/inputs/Search";
@@ -87,7 +87,7 @@ export default function Quina() {
             </div>
             <div className={styles.resultMain} ref={conponentPDF}>
                 <div className={styles.resultNumber}>
-                    <h2>Quina / Concurso {resultGame?.concurso}</h2>
+                    <h2>Quina / Concurso {resultGame.concurso}</h2>
                     <div className={classnames(styles.result, styles.sixColumns, classnames)}>
                         {resultGame.dezenas.map((item, index) => {
                             return (
