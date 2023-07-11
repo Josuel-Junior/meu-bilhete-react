@@ -1,0 +1,22 @@
+.buttonPdf {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 2px;
+    margin-bottom: 5px;
+    cursor: pointer;
+
+    display: block;
+}
+
+.buttonPdf img {
+    width: 60px;
+    height: 60px;
+}
+
+@media(max-width: 1400px) {
+    .buttonPdf img {
+        width: 45px;
+        height: 45px;
+    }
+}

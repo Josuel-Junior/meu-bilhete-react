@@ -1,0 +1,32 @@
+.padding {
+    padding: 5px;
+}
+
+.display {
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+
+@media(max-width: 450px) {
+    .display {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+@media(max-width: 350px) {
+    .display {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}

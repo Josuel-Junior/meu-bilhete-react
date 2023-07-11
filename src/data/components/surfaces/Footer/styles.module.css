@@ -1,0 +1,31 @@
+.footer {
+    padding: 1rem;
+    background-color: #2191c9;
+}
+
+.footer address {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    font-style: normal;
+    color: #ffffffb3;
+}
+
+.footer address a {
+    text-decoration: none;
+    margin-right: 5px;
+    transition: all .3s;
+    color: #ffffffb3;
+}
+
+.footer address a:hover {
+    color: #ffffff;
+}
+
+@media(max-width: 500px) {
+    .footer address {
+        flex-direction: column;
+        align-items: center;
+        font-size: .8rem;
+    }
+}
