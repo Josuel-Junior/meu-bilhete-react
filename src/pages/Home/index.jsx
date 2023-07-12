@@ -83,7 +83,7 @@ export default function Home() {
       </div>
       <div className={styles.resultMain} ref={conponentPDF}>
         <div className={styles.resultNumber}>
-          <h2>Mega-Sena / Concurso {resultGame?.concurso}</h2>
+          <h2>Mega-Sena / Concurso {resultGame.concurso}</h2>
           <div className={classnames(styles.result, styles.sixColumns, classnames)}>
             {resultGame.dezenas.map((item, index) => {
               return (

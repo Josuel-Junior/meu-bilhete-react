@@ -87,7 +87,7 @@ export default function Quina() {
             </div>
             <div className={styles.resultMain} ref={conponentPDF}>
                 <div className={styles.resultNumber}>
-                    <h2>Dia de Sorte / Concurso {resultGame?.concurso}</h2>
+                    <h2>Dia de Sorte / Concurso {resultGame.concurso}</h2>
                     <div className={classnames(styles.result, styles.sevenColumns, classnames)}>
                         {resultGame?.dezenas.map((item, index) => {
                             return (
