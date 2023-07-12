@@ -85,7 +85,7 @@ export default function Home() {
             </div>
             <div className={styles.resultMain} ref={conponentPDF}>
                 <div className={styles.resultNumber}>
-                    <h2>Dupla-Sena / Concurso {resultGame?.concurso}</h2>
+                    <h2>Dupla-Sena / Concurso {resultGame.concurso}</h2>
                     <div className={classnames(styles.result, styles.sixColumns, classnames)}>
                         {resultGame?.dezenas.slice(0, 6).map((item, index) => {
                             return (

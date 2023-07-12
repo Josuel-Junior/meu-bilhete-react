@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import api from "../../data/Services/api";
-import styles from './styles.module.css'
+import styles from '../Home/styles.module.css'
 
 import Display from "../../data/components/data-display/Display";
 import Search from "../../data/components/inputs/Search";
