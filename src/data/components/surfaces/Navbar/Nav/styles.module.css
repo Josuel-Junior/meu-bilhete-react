@@ -1,8 +1,11 @@
+header {
+    position: sticky;
+    top: 0;
+}
+
 .navbar {
     background-color: #2191c9;
     padding: .8rem;
-    position: sticky;
-    top: 0;
     width: 100%;
     display: flex;
     align-items: center;
