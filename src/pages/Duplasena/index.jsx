@@ -50,11 +50,11 @@ export default function Home() {
     };
 
     useEffect(() => {
-        result(ValidadeContest(contest, resultGame, 'dupla-sena'))
+        result(ValidadeContest(contest, resultGame, 'duplasena'))
     }, []);
 
     function fnSearch() {
-        result(ValidadeContest(contest, resultGame, 'dupla-sena'))
+        result(ValidadeContest(contest, resultGame, 'duplasena'))
     }
 
     const generationPDF = useReactToPrint({

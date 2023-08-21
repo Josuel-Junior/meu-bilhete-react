@@ -48,11 +48,11 @@ export default function Quina() {
     };
 
     useEffect(() => {
-        result(ValidadeContest(contest, resultGame, 'dia-de-sorte'))
+        result(ValidadeContest(contest, resultGame, 'diadesorte'))
     }, []);
 
     function fnSearch() {
-        result(ValidadeContest(contest, resultGame, 'dia-de-sorte'))
+        result(ValidadeContest(contest, resultGame, 'diadesorte'))
     }
 
     const generationPDF = useReactToPrint({

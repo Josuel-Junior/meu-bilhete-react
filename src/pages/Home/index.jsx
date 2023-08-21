@@ -49,11 +49,11 @@ export default function Home() {
   };
 
   useEffect(() => {
-    result(ValidadeContest(contest, resultGame, 'mega-sena'))
+    result(ValidadeContest(contest, resultGame, 'megasena'))
   }, []);
 
   function fnSearch() {
-    result(ValidadeContest(contest, resultGame, 'mega-sena'))
+    result(ValidadeContest(contest, resultGame, 'megasena'))
   }
 
   const generationPDF = useReactToPrint({
