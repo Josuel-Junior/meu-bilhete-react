@@ -5,11 +5,11 @@ import numeral from "numeral"
 export default function validateResu(info) {
     let validate = ''
 
-    if (info.vencedores > 1) {
-        validate = `${numeral(info.vencedores).format('0,0')} Ganhadores R$ ${info.premio}`
+    if (info.ganhadores > 1) {
+        validate = `${numeral(info.ganhadores).format('0,0')} Ganhadores ${numeral(info.valorPremio).format('$0,0.00')}`
     }
-    else if (info.vencedores > 0) {
-        validate = `${info.vencedores} Ganhador R$ ${info.premio}`
+    else if (info.ganhadores > 0) {
+        validate = `${info.ganhadores} Ganhador R$ ${numeral(info.valorPremio).format('$0,0.00')}`
     }
     else {
         validate = "Não houve ganhadores"

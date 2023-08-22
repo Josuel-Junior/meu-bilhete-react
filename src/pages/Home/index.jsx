@@ -53,8 +53,10 @@ export default function Home() {
   }, []);
 
   function fnSearch() {
-    result(ValidadeContest(contest, resultGame, 'megasena'))
+    result(ValidadeContest(contest, resultGame, 'mega-sena'))
   }
+
+  console.log(resultGame)
 
   const generationPDF = useReactToPrint({
     content: () => conponentPDF.current,

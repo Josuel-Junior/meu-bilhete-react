@@ -4,6 +4,8 @@ import validateInfoResult from "../../../Services/validateInfoResult";
 
 export default function ResultInformation({ infoGame }) {
 
+  console.log(infoGame)
+
   if (infoGame.length == 0) {
     return (
       <div>
@@ -18,7 +20,7 @@ export default function ResultInformation({ infoGame }) {
       {infoGame.map((item, index) => {
         return (
           <div key={index} className={styles.result}>
-            <h3>{`${item.acertos}`}</h3>
+            <h3>{`${item.descricao}`}</h3>
             <span>{validateInfoResult(item)}</span>
           </div>
         );
