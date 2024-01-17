@@ -4,8 +4,6 @@ import validateInfoResult from "../../../Services/validateInfoResult";
 
 export default function ResultInformation({ infoGame }) {
 
-  console.log(infoGame)
-
   if (infoGame.length == 0) {
     return (
       <div>

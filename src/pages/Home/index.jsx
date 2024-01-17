@@ -34,7 +34,10 @@ export default function Home() {
   const [contest, setContest] = useState("");
 
 
+
   const result = async (contest) => {
+
+
     setLoading(true);
     try {
       const response = await api.get(contest);
@@ -53,10 +56,9 @@ export default function Home() {
   }, []);
 
   function fnSearch() {
-    result(ValidadeContest(contest, resultGame, 'mega-sena'))
+    result(ValidadeContest(contest, resultGame, 'megasena'))
   }
 
-  console.log(resultGame)
 
   const generationPDF = useReactToPrint({
     content: () => conponentPDF.current,

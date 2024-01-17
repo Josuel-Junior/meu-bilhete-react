@@ -11,8 +11,6 @@ export default function ContestResult({ resultContest, result }) {
     )
   }
 
-  console.log(result[0].ganhadores)
-
   return (
     <div className={styles.result}>
       <h3>{resultContest ? "Acumulou" : "Concurso não acumulou"}</h3>
